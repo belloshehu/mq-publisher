@@ -10,7 +10,9 @@ to a rabbitMQ broker using a exchange name of and routing key of
 
 To start this application, follow the following steps:
 
-- Clone the repository: `git clone repo-url`
+- Clone the [repository](https://github.com/belloshehu/mq-publisher):
+
+  `git clone repo-url`
 
 - Change to the directory of the application:
 
