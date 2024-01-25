@@ -2,11 +2,6 @@ import { readFile } from "fs/promises";
 import { TextFormatter } from "./models/formatter";
 import Customer from "./models/customer";
 
-const fintechCordinate = {
-  lat: 52.493256,
-  long: 13.446082,
-};
-
 class CustomerFileHandler {
   private filePath = "";
   private data = "";
@@ -36,6 +31,11 @@ class CustomerFileHandler {
     }
   }
 
+  // sort customers' ID in ascending order
+  sortInvitedCustomersID() {
+    this.invitedCustomers.sort((a, b) => a.localeCompare(b));
+  }
+
   async getInvitedUsers() {
     try {
       const lines = (await this.getUsersStringArray()) as string[];
@@ -44,7 +44,7 @@ class CustomerFileHandler {
           customer.trim()
         );
         const newCustomer = new Customer(id, lat, long);
-        newCustomer.calculateDistance(fintechCordinate);
+        newCustomer.calculateDistance();
 
         if (isNaN(newCustomer.distance)) {
           console.log(
@@ -56,6 +56,8 @@ class CustomerFileHandler {
           }
         }
       });
+
+      this.sortInvitedCustomersID();
       return this.invitedCustomers;
     } catch (error) {
       console.log("Failed to get invited customers ...", error);

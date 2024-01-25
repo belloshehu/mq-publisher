@@ -9,6 +9,10 @@ class Customer {
   private lat = 0;
   private long = 0;
   distance = 0;
+  private fintechCordinate = {
+    lat: 52.493256,
+    long: 13.446082,
+  };
 
   constructor(id: string, lat: number, long: number) {
     this.id = id;
@@ -20,7 +24,7 @@ class Customer {
     return this.distance <= 100;
   }
 
-  calculateDistance(fintechCordinate: Cordinate) {
+  calculateDistance() {
     /*
     Calculate distance between two cordinates on earth in kilometer
   */
@@ -28,8 +32,8 @@ class Customer {
     // converts latitudes and longitudes from degree to radian
     const userLat = (this.lat * Math.PI) / 180;
     const userLong = (this.long * Math.PI) / 180;
-    const fintechLat = (fintechCordinate.lat * Math.PI) / 180;
-    const fintechLong = (fintechCordinate.long * Math.PI) / 180;
+    const fintechLat = (this.fintechCordinate.lat * Math.PI) / 180;
+    const fintechLong = (this.fintechCordinate.long * Math.PI) / 180;
 
     // Haversine formular
     const dLat = userLat - fintechLat;
