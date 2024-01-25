@@ -1,15 +1,11 @@
 export class TextFormatter {
-  data = "";
-  textLines: [string] = [""];
+  /*  
+    Class to group functionalities for formatting customer text file content
+  */
 
-  // converts text to lines of string
-  constructor(textData: string) {
-    this.data = textData;
-  }
-
-  textToLines() {
+  textToLines(data: string) {
     try {
-      return this.data.split("\n");
+      return data.split("\n");
     } catch (error) {
       console.log(error);
     }

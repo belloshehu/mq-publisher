@@ -1,9 +1,9 @@
 import { Cordinate } from "../types";
 
-class User {
+class Customer {
   id = "";
-  lat = 0;
-  long = 0;
+  private lat = 0;
+  private long = 0;
   distance = 0;
 
   constructor(id: string, lat: number, long: number) {
@@ -44,4 +44,4 @@ class User {
   }
 }
 
-export default User;
+export default Customer;
