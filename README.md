@@ -12,7 +12,7 @@ To start this application, follow the following steps:
 
 - Clone the [repository](https://github.com/belloshehu/mq-publisher):
 
-  `git clone repo-url`
+  `git clone https://github.com/belloshehu/mq-publisher.git`
 
 - Change to the directory of the application:
 
