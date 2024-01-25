@@ -1,6 +1,10 @@
 import { Cordinate } from "../types";
 
 class Customer {
+  /*
+   Class to represent instance of customer with a given ID, latitude and longitude
+  */
+
   id = "";
   private lat = 0;
   private long = 0;
@@ -26,7 +30,6 @@ class Customer {
     const userLong = (this.long * Math.PI) / 180;
     const fintechLat = (fintechCordinate.lat * Math.PI) / 180;
     const fintechLong = (fintechCordinate.long * Math.PI) / 180;
-    console.log(this.id);
 
     // Haversine formular
     const dLat = userLat - fintechLat;

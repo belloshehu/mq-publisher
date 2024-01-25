@@ -61,6 +61,10 @@ class CustomerFileHandler {
       console.log("Failed to get invited customers ...", error);
     }
   }
+
+  clearInvitedCustomers() {
+    this.invitedCustomers = [];
+  }
 }
 
 export default CustomerFileHandler;

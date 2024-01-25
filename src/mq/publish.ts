@@ -23,8 +23,7 @@ export default class Producer {
     await this.channel.assertExchange(exhangeName, this.exchangeType);
 
     // Publish the message to the exhange with with a routing key
-    const logDetails = {
-      logType: routingKey,
+    const data = {
       message: message,
       dateTime: new Date(),
     };
@@ -32,7 +31,10 @@ export default class Producer {
     this.channel.publish(
       exhangeName,
       routingKey,
-      Buffer.from(JSON.stringify(logDetails))
+      Buffer.from(JSON.stringify(data))
     );
+    console.log("-".repeat(50));
+    console.log(`Published invited customers' IDs`);
+    console.log("-".repeat(50));
   }
 }

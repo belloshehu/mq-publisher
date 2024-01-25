@@ -18,6 +18,8 @@ app.get("/invited-customers", async (req: Request, res: Response) => {
     "invitedCustomers",
     invitedCustomers as PublishMessage
   );
+  // clear the invitedCustomers array to avoid compounding
+  customerFileHandler.clearInvitedCustomers();
 
   res.send(`Sent invitation to ${invitedCustomers?.length} customers`);
 });
